@@ -22,36 +22,42 @@
     //ScrollView 不支持自适应UINavigationController 需自己去设置位子
     self.automaticallyAdjustsScrollViewInsets=NO;
     
-    YXLDisplayListView *Display =[[YXLDisplayListView alloc]initWithFrame:(CGRect){0,0,kWindowWidth,kWindowHeight}];
+    YXLDisplayListView *Display =[[YXLDisplayListView alloc]initWithFrame:(CGRect){{0,0},self.view.frame.size}];
     
-    UIViewController * all = [[UIViewController alloc]init];
-    all.view.backgroundColor=UIColorRGBA(100, 238, 238, 1);
-    all.title=@"全部";
+    UIViewController * item1 = [[UIViewController alloc]init];
+    item1.view.backgroundColor=[UIColor cyanColor];
+    item1.title=@"我很帅";
     
-    UIViewController * undisbursed = [[UIViewController alloc]init];
-    undisbursed.view.backgroundColor=UIColorRGBA(50, 238, 238, 1);
-    undisbursed.title=@"未支付";
+    UIViewController * item2 = [[UIViewController alloc]init];
+    item2.view.backgroundColor=[UIColor yellowColor];
+    item2.title=@"是啊";
     
-    UIViewController * noConsume = [[UIViewController alloc]init];
-    noConsume.view.backgroundColor=UIColorRGBA(200, 238, 238, 1);
-    noConsume.title=@"未消费";
+    UIViewController * item3 = [[UIViewController alloc]init];
+    item3.view.backgroundColor=[UIColor cyanColor];
+    item3.title=@"确实很帅";
     
-    UIViewController * toBeEvaluated = [[UIViewController alloc]init];
-    toBeEvaluated.view.backgroundColor =UIColorRGBA(250, 238, 238, 1);
-    toBeEvaluated.title=@"待评价";
+    UIViewController * item4 = [[UIViewController alloc]init];
+    item4.view.backgroundColor =[UIColor yellowColor];
+    item4.title=@"左边说没错";
     
-    UIViewController * refunds = [[UIViewController alloc]init];
-    refunds.view.backgroundColor=UIColorRGBA(0, 238, 238, 1);
-    refunds.title=@"退款";
+    UIViewController * item5 = [[UIViewController alloc]init];
+    item5.view.backgroundColor=[UIColor cyanColor];
+    item5.title=@"哈哈哈";
     
-    NSArray * controllers = @[all,undisbursed,noConsume,toBeEvaluated,refunds];
+    UIViewController * item6 = [[UIViewController alloc]init];
+    item6.view.backgroundColor=[UIColor cyanColor];
+    item6.title=@"帅醒";
+    
+    NSArray * controllers = @[item1,item2,item3,item4,item5,item6];
+    Display.kBtnWInt=controllers.count;
     //是否需要顶部下划线
     Display.isNeedTopUnderline = YES;
     //这里是更改顶部滑动字体颜色
-    Display.tabItemSelectedColor = [UIColor blackColor];
-    //添加控制器到数组
+    Display.tabItemSelectedColor = [UIColor redColor];
+    Display.topUnderlineBackgroundColor =[UIColor lightGrayColor];
+    Display.topBackgroundColor=[UIColor whiteColor];
+    //添加控制器到数组topBackgroundColor
     Display.viewControllers = controllers;
-    
     [self.view addSubview:Display];
 }
 

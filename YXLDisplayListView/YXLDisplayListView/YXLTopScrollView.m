@@ -45,7 +45,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         UIView *viewShow =[[UIView alloc]init];
-        viewShow.frame =(CGRect){0,frame.size.height-0.5,kWindowWidth,0.3};
+        viewShow.frame =(CGRect){0,frame.size.height-0.5,frame.size.width,0.3};
         viewShow.alpha=0.3;
         viewShow.backgroundColor=[UIColor blackColor];
         [self addSubview:viewShow];
@@ -205,7 +205,7 @@
     NSInteger count = viewControllers.count;
     
     
-    self.contentSize = CGSizeMake((kBtnW +kMargin) * count, 0);
+    self.contentSize = CGSizeMake((_kBtnW +_kMargin) * count, 0);
     
     for (int i = 0; i < count; i++) {
         
@@ -226,11 +226,11 @@
         [tabItem setBackgroundImage:self.tabItemSelectedBackgroundImage forState:UIControlStateSelected];
         
         
-        CGFloat tabX = (kBtnW +kMargin) * i;
+        CGFloat tabX = (_kBtnW +_kMargin) * i;
         
         tabItem.tag = i;
         
-        tabItem.frame = CGRectMake(tabX, 0, kBtnW, kBtnH);
+        tabItem.frame = CGRectMake(tabX, 0, _kBtnW, CGHeight(self.frame));
         
         UIViewController *c = viewControllers[i];
         
@@ -274,7 +274,9 @@
 {
 #warning 顶部按钮根据你得项目需求如果总个数超过显示区域需要将这个打开，没超过就注释掉
     // 调整顶部按钮文字显示范围：居中还是刚好显示全
-//    [self adjustTopScrollViewContentX:tabItem];
+    if (_isCenterThe) {
+        [self adjustTopScrollViewContentX:tabItem];
+    }
 
     // 防止点击同一个按钮
     if (_selectedTabItem == tabItem) return;
@@ -308,9 +310,8 @@
     // 懒加载下划线
     if (_underLine == nil) {
         _underLine = [[UIView alloc] initWithFrame:lineRect];
-        _underLine.backgroundColor = [UIColor redColor];
-        _underLine.layer.masksToBounds=YES;
-        _underLine.layer.cornerRadius=1.5;
+//        _underLine.layer.masksToBounds=YES;
+//        _underLine.layer.cornerRadius=1.5;
         if (_topUnderlineBackgroundColor) {
             _underLine.backgroundColor = _topUnderlineBackgroundColor;
         }
@@ -321,9 +322,22 @@
  
     [UIView animateWithDuration:0.2f animations:^{
         [_underLine setFrame:lineRect];
+        
+        
     }];
     
 }
+
+-(void)setSelectedIndex:(NSInteger)selectedIndex
+{
+    _selectedIndex=selectedIndex;
+    for (int i=0; i<_tabsArr.count; i++) {
+        if (selectedIndex ==[_tabsArr[i] tag]) {
+            [self tabClick:_tabsArr[i]];
+        }
+    }
+}
+
 
 /**
  *  获取顶部下划线的frame
@@ -346,13 +360,13 @@
   
             int btnX;
     if (button.tag == 0) {
-        btnX = (kBtnW - strSize.width) / 2;
+        btnX = (_kBtnW - strSize.width) / 2;
     }
     else
-    btnX = (kBtnW - strSize.width) / 2+ kBtnW *(int)button.tag ;
+    btnX = (_kBtnW - strSize.width) / 2+ _kBtnW *(int)button.tag ;
   
    
-            return  CGRectMake(btnX, self.frame.size.height-3, (int)strSize.width, 3);
+            return  CGRectMake(btnX, self.frame.size.height-2, (int)strSize.width, 2);
 
 }
 
@@ -364,7 +378,7 @@
 {
     UIView *divider = [[UIView alloc] init];
     
-    CGFloat dividerH = kBtnH / 2;
+    CGFloat dividerH = CGHeight(self.frame) / 2;
     CGFloat dividerY = (self.bounds.size.height - dividerH) / 2;
     CGFloat dividerW = 1;
     CGFloat dividerX = CGRectGetMaxX(tab.frame) - 1;

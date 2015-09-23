@@ -6,29 +6,37 @@
 //  Copyright (c) 2015年 叶星龙. All rights reserved.
 //
 
-#define kWindowWidth                        ([[UIScreen mainScreen] bounds].size.width)
-#define kWindowHeight                       ([[UIScreen mainScreen] bounds].size.height)
-
-// 标准的RGBA设置
-#define UIColorRGBA(r, g, b, a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)]
 
 /*******************/
 // 顶部滚动视图的高度
-#define kTopScrollH 40
+//#define kTopScrollH 40
+//
+////设置按钮显示区域多少个
+//#define kBtnWInt 4
+//
+//// 分类按钮的宽度
+//#define kBtnW kWindowWidth/kBtnWInt
+//// 分类按钮的间距
+//#define kMargin (kWindowWidth-kBtnW*kBtnWInt)/kBtnWInt
+//
+//// 分类按钮的高度
+//#define kBtnH 40
 
-#warning 设置按钮显示区域多少个
-//设置按钮显示区域多少个
-#define kBtnWInt 5
+#ifndef CGWidth
+#define CGWidth(rect)                   rect.size.width
+#endif
 
-// 分类按钮的宽度
-#define kBtnW kWindowWidth/kBtnWInt
-// 分类按钮的间距
-#define kMargin (kWindowWidth-kBtnW*kBtnWInt)/kBtnWInt
+#ifndef CGHeight
+#define CGHeight(rect)                  rect.size.height
+#endif
 
-// 分类按钮的高度
-#define kBtnH 40
+#ifndef CGOriginX
+#define CGOriginX(rect)                 rect.origin.x
+#endif
 
-
+#ifndef CGOriginY
+#define CGOriginY(rect)                 rect.origin.y
+#endif
 
 
 //选中中了分类按钮的通知

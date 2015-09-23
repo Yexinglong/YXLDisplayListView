@@ -41,7 +41,6 @@
         self.showsHorizontalScrollIndicator = NO;
         self.showsVerticalScrollIndicator = NO;
         self.bounces = NO;
-        
         // 设置scrollView的代理
         self.delegate = self;
         

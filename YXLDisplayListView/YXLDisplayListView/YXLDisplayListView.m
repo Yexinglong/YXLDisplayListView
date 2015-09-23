@@ -7,14 +7,12 @@
 //
 
 #import "YXLDisplayListView.h"
-#import "YXLBottomScrollView.h"
-#import "YXLTopScrollView.H"
+
 #import "Common.h"
 @interface YXLDisplayListView ()
-{
-    YXLTopScrollView *_topScroll;
-    YXLBottomScrollView *_bottomScroll;
-}
+
+@property (nonatomic,assign) NSInteger kMargin;
+
 @end
 
 @implementation YXLDisplayListView
@@ -24,8 +22,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        
-        
+        [self initTopFrame];
     }
     return self;
 }
@@ -36,10 +33,21 @@
 {
     self = [super initWithCoder:aDecoder];
     if (self) {
+        [self initTopFrame];
     }
     return self;
 }
 
+-(void)initTopFrame{
+    _kTopScrollH =40;
+    _kBtnWInt=2;
+    // 分类按钮的间距
+    if (_kBtnWInt>4) {
+        _kMargin= (CGWidth(self.frame)-(CGWidth(self.frame)/4)*4)/4;
+    }else{
+        _kMargin= (CGWidth(self.frame)-(CGWidth(self.frame)/_kBtnWInt)*_kBtnWInt)/_kBtnWInt;
+    }
+}
 
 #pragma 初始化视图
 - (void)initializeView
@@ -67,7 +75,7 @@
 {
     CGFloat scrollY = CGRectGetMaxY(_topScroll.frame);
     CGFloat scrollW = self.bounds.size.width;
-    CGFloat scrollH = self.bounds.size.height - kTopScrollH;
+    CGFloat scrollH = self.bounds.size.height - _kTopScrollH;
     YXLBottomScrollView *scroll = [[YXLBottomScrollView alloc]  initWithFrame:CGRectMake(0, scrollY, scrollW, scrollH)];
     // 设置背景颜色
     scroll.backgroundColor = _bottomBackgroundColor;
@@ -91,10 +99,18 @@
     
     CGFloat scrollW = self.frame.size.width;
     
-    YXLTopScrollView *scroll = [[YXLTopScrollView alloc] initWithFrame:CGRectMake(0, scrollY, scrollW, kTopScrollH)];
+    YXLTopScrollView *scroll = [[YXLTopScrollView alloc] initWithFrame:CGRectMake(0, scrollY, scrollW, _kTopScrollH)];
+    scroll.kMargin=_kMargin;
+    if (_kBtnWInt > 4) {
+    scroll.kBtnW=CGWidth(self.frame)/4;
+    }else{
+    scroll.kBtnW=CGWidth(self.frame)/_kBtnWInt;
+    }
     
-#warning 这里设置滑动栏背景颜色
-    scroll.backgroundColor = [UIColor whiteColor];
+    scroll.isCenterThe=YES;
+    
+    scroll.topUnderlineBackgroundColor=_topUnderlineBackgroundColor;
+
     
     scroll.tabItemNormalBackgroundImage = self.tabItemNormalBackgroundImage;
     
@@ -102,9 +118,12 @@
     
     scroll.tabItemSelectedBackgroundImage = self.tabItemSelectedBackgroundImage;
     
+    
+    
     scroll.tabItemSelectedColor = self.tabItemSelectedColor;
     
     scroll.isNeedTopUnderline = _isNeedTopUnderline;
+
     // 是否需要分割线
     scroll.isNeedTopDivider = _isNeedTopDivider;
     // 注意：选中的角标需要放在设置控制器数组的前面
@@ -112,6 +131,9 @@
     
     scroll.viewControllers = _viewControllers;
     
+#warning 这里设置滑动栏背景颜色
+
+    scroll.backgroundColor=[UIColor whiteColor];
     [self addSubview:scroll];
     
     

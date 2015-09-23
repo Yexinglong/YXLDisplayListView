@@ -29,6 +29,12 @@
 @property (nonatomic, assign) BOOL isNeedTopUnderline;
 /* 设置顶部按钮下划线背景*/
 @property (nonatomic, strong) UIColor *topUnderlineBackgroundColor;
+/*是否居中显示完整按钮 默认NO不居中  只用于按钮个数超过屏幕*/
+@property (nonatomic ,assign) BOOL isCenterThe;
+
+@property (nonatomic ,assign) NSInteger kMargin;
+
+@property (nonatomic ,assign) NSInteger kBtnW;
 
 
 

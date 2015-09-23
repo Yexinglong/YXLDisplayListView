@@ -14,10 +14,10 @@
 		5B38B64B1B1BE881008E28FF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B38B64A1B1BE881008E28FF /* Images.xcassets */; };
 		5B38B64E1B1BE881008E28FF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B38B64C1B1BE881008E28FF /* LaunchScreen.xib */; };
 		5B38B65A1B1BE881008E28FF /* YXLDisplayListViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B38B6591B1BE881008E28FF /* YXLDisplayListViewTests.m */; };
-		5B38B66C1B1BE8A3008E28FF /* YXLBottomScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B38B6651B1BE8A3008E28FF /* YXLBottomScrollView.m */; };
-		5B38B66D1B1BE8A3008E28FF /* YXLDisplayListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B38B6671B1BE8A3008E28FF /* YXLDisplayListView.m */; };
-		5B38B66E1B1BE8A3008E28FF /* YXLDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B38B6691B1BE8A3008E28FF /* YXLDisplayView.m */; };
-		5B38B66F1B1BE8A3008E28FF /* YXLTopScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B38B66B1B1BE8A3008E28FF /* YXLTopScrollView.m */; };
+		5B84B9E61BB26A47009108F2 /* YXLBottomScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B84B9DF1BB26A47009108F2 /* YXLBottomScrollView.m */; settings = {ASSET_TAGS = (); }; };
+		5B84B9E71BB26A47009108F2 /* YXLDisplayListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B84B9E11BB26A47009108F2 /* YXLDisplayListView.m */; settings = {ASSET_TAGS = (); }; };
+		5B84B9E81BB26A47009108F2 /* YXLDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B84B9E31BB26A47009108F2 /* YXLDisplayView.m */; settings = {ASSET_TAGS = (); }; };
+		5B84B9E91BB26A47009108F2 /* YXLTopScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B84B9E51BB26A47009108F2 /* YXLTopScrollView.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,15 +44,15 @@
 		5B38B6531B1BE881008E28FF /* YXLDisplayListViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YXLDisplayListViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B38B6581B1BE881008E28FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B38B6591B1BE881008E28FF /* YXLDisplayListViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YXLDisplayListViewTests.m; sourceTree = "<group>"; };
-		5B38B6641B1BE8A3008E28FF /* YXLBottomScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXLBottomScrollView.h; sourceTree = "<group>"; };
-		5B38B6651B1BE8A3008E28FF /* YXLBottomScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXLBottomScrollView.m; sourceTree = "<group>"; };
-		5B38B6661B1BE8A3008E28FF /* YXLDisplayListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXLDisplayListView.h; sourceTree = "<group>"; };
-		5B38B6671B1BE8A3008E28FF /* YXLDisplayListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXLDisplayListView.m; sourceTree = "<group>"; };
-		5B38B6681B1BE8A3008E28FF /* YXLDisplayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXLDisplayView.h; sourceTree = "<group>"; };
-		5B38B6691B1BE8A3008E28FF /* YXLDisplayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXLDisplayView.m; sourceTree = "<group>"; };
-		5B38B66A1B1BE8A3008E28FF /* YXLTopScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXLTopScrollView.h; sourceTree = "<group>"; };
-		5B38B66B1B1BE8A3008E28FF /* YXLTopScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXLTopScrollView.m; sourceTree = "<group>"; };
-		5B38B6711B1BE93E008E28FF /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		5B84B9DD1BB26A47009108F2 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		5B84B9DE1BB26A47009108F2 /* YXLBottomScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXLBottomScrollView.h; sourceTree = "<group>"; };
+		5B84B9DF1BB26A47009108F2 /* YXLBottomScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXLBottomScrollView.m; sourceTree = "<group>"; };
+		5B84B9E01BB26A47009108F2 /* YXLDisplayListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXLDisplayListView.h; sourceTree = "<group>"; };
+		5B84B9E11BB26A47009108F2 /* YXLDisplayListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXLDisplayListView.m; sourceTree = "<group>"; };
+		5B84B9E21BB26A47009108F2 /* YXLDisplayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXLDisplayView.h; sourceTree = "<group>"; };
+		5B84B9E31BB26A47009108F2 /* YXLDisplayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXLDisplayView.m; sourceTree = "<group>"; };
+		5B84B9E41BB26A47009108F2 /* YXLTopScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXLTopScrollView.h; sourceTree = "<group>"; };
+		5B84B9E51BB26A47009108F2 /* YXLTopScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXLTopScrollView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,7 +94,7 @@
 		5B38B63C1B1BE880008E28FF /* YXLDisplayListView */ = {
 			isa = PBXGroup;
 			children = (
-				5B38B6631B1BE8A3008E28FF /* YXLDisplayListView */,
+				5B84B9DC1BB26A47009108F2 /* YXLDisplayListView */,
 				5B38B6411B1BE880008E28FF /* AppDelegate.h */,
 				5B38B6421B1BE880008E28FF /* AppDelegate.m */,
 				5B38B6441B1BE880008E28FF /* ViewController.h */,
@@ -133,18 +133,18 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		5B38B6631B1BE8A3008E28FF /* YXLDisplayListView */ = {
+		5B84B9DC1BB26A47009108F2 /* YXLDisplayListView */ = {
 			isa = PBXGroup;
 			children = (
-				5B38B6641B1BE8A3008E28FF /* YXLBottomScrollView.h */,
-				5B38B6651B1BE8A3008E28FF /* YXLBottomScrollView.m */,
-				5B38B6661B1BE8A3008E28FF /* YXLDisplayListView.h */,
-				5B38B6671B1BE8A3008E28FF /* YXLDisplayListView.m */,
-				5B38B6681B1BE8A3008E28FF /* YXLDisplayView.h */,
-				5B38B6691B1BE8A3008E28FF /* YXLDisplayView.m */,
-				5B38B66A1B1BE8A3008E28FF /* YXLTopScrollView.h */,
-				5B38B66B1B1BE8A3008E28FF /* YXLTopScrollView.m */,
-				5B38B6711B1BE93E008E28FF /* Common.h */,
+				5B84B9DD1BB26A47009108F2 /* Common.h */,
+				5B84B9DE1BB26A47009108F2 /* YXLBottomScrollView.h */,
+				5B84B9DF1BB26A47009108F2 /* YXLBottomScrollView.m */,
+				5B84B9E01BB26A47009108F2 /* YXLDisplayListView.h */,
+				5B84B9E11BB26A47009108F2 /* YXLDisplayListView.m */,
+				5B84B9E21BB26A47009108F2 /* YXLDisplayView.h */,
+				5B84B9E31BB26A47009108F2 /* YXLDisplayView.m */,
+				5B84B9E41BB26A47009108F2 /* YXLTopScrollView.h */,
+				5B84B9E51BB26A47009108F2 /* YXLTopScrollView.m */,
 			);
 			path = YXLDisplayListView;
 			sourceTree = "<group>";
@@ -249,10 +249,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B38B66C1B1BE8A3008E28FF /* YXLBottomScrollView.m in Sources */,
-				5B38B66E1B1BE8A3008E28FF /* YXLDisplayView.m in Sources */,
-				5B38B66D1B1BE8A3008E28FF /* YXLDisplayListView.m in Sources */,
-				5B38B66F1B1BE8A3008E28FF /* YXLTopScrollView.m in Sources */,
+				5B84B9E61BB26A47009108F2 /* YXLBottomScrollView.m in Sources */,
+				5B84B9E81BB26A47009108F2 /* YXLDisplayView.m in Sources */,
+				5B84B9E71BB26A47009108F2 /* YXLDisplayListView.m in Sources */,
+				5B84B9E91BB26A47009108F2 /* YXLTopScrollView.m in Sources */,
 				5B38B6461B1BE880008E28FF /* ViewController.m in Sources */,
 				5B38B6431B1BE880008E28FF /* AppDelegate.m in Sources */,
 				5B38B6401B1BE880008E28FF /* main.m in Sources */,
@@ -452,6 +452,7 @@
 				5B38B65F1B1BE881008E28FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5B38B6601B1BE881008E28FF /* Build configuration list for PBXNativeTarget "YXLDisplayListViewTests" */ = {
 			isa = XCConfigurationList;
@@ -460,6 +461,7 @@
 				5B38B6621B1BE881008E28FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
