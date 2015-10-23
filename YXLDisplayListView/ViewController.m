@@ -50,6 +50,7 @@
     
     NSArray * controllers = @[item1,item2,item3,item4,item5,item6];
     Display.kBtnWInt=controllers.count;
+    Display.kBtnWWinInt=3;
     //是否需要顶部下划线
     Display.isNeedTopUnderline = YES;
     //这里是更改顶部滑动字体颜色
