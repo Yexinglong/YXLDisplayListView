@@ -41,12 +41,8 @@
 -(void)initTopFrame{
     _kTopScrollH =40;
     _kBtnWInt=2;
-    // 分类按钮的间距
-    if (_kBtnWInt>4) {
-        _kMargin= (CGWidth(self.frame)-(CGWidth(self.frame)/4)*4)/4;
-    }else{
-        _kMargin= (CGWidth(self.frame)-(CGWidth(self.frame)/_kBtnWInt)*_kBtnWInt)/_kBtnWInt;
-    }
+    _kBtnWWinInt=4;
+    
 }
 
 #pragma 初始化视图
@@ -95,14 +91,22 @@
 #pragma mark 添加顶部ScrollView
 - (void)addTopScrollView
 {
+    
+    // 分类按钮的间距
+    if (_kBtnWInt>_kBtnWWinInt) {
+        _kMargin= (CGWidth(self.frame)-(CGWidth(self.frame)/_kBtnWWinInt)*_kBtnWWinInt)/_kBtnWWinInt;
+    }else{
+        _kMargin= (CGWidth(self.frame)-(CGWidth(self.frame)/_kBtnWInt)*_kBtnWInt)/_kBtnWInt;
+    }
+    
     CGFloat scrollY = 0;
     
     CGFloat scrollW = self.frame.size.width;
     
     YXLTopScrollView *scroll = [[YXLTopScrollView alloc] initWithFrame:CGRectMake(0, scrollY, scrollW, _kTopScrollH)];
     scroll.kMargin=_kMargin;
-    if (_kBtnWInt > 4) {
-    scroll.kBtnW=CGWidth(self.frame)/4;
+    if (_kBtnWInt > _kBtnWWinInt) {
+    scroll.kBtnW=CGWidth(self.frame)/_kBtnWWinInt;
     }else{
     scroll.kBtnW=CGWidth(self.frame)/_kBtnWInt;
     }

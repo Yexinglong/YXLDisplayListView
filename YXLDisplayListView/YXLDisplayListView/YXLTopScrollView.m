@@ -138,10 +138,6 @@
         {
         currentFrame.size.width += underLineZoomW;
         }
-    
-   
-
-    
 
     _underLine.frame = currentFrame;
     
@@ -303,7 +299,6 @@
 #pragma mark 根据指定按钮添加/移动线条
 - (void)moveUnderLineWithButton:(UIButton *)button
 {
-    
     // 获取顶部下划线的frame
     CGRect lineRect = [self getUnderLineFrameWithButton:button];
     
@@ -315,16 +310,15 @@
         if (_topUnderlineBackgroundColor) {
             _underLine.backgroundColor = _topUnderlineBackgroundColor;
         }
-        
         [self addSubview:_underLine];
     }
     
- 
     [UIView animateWithDuration:0.2f animations:^{
         [_underLine setFrame:lineRect];
-        
+    } completion:^(BOOL finished) {
         
     }];
+  
     
 }
 
